@@ -39,6 +39,9 @@ function setup() {
 
 function draw() {
   background(225);
+  fill(0);
+  rect(75, 40, 35, 45);
+
 
 
 
@@ -51,3 +54,4 @@ function keyPressed() {
     birb.vy -= 5;
   }
 }
+
