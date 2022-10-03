@@ -40,7 +40,7 @@ function setup() {
 function draw() {
   background(225);
   fill(0);
-  rect(75, 40, 35, 45);
+  rect(75, 40, 60, 10);
 
 
 
