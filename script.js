@@ -28,22 +28,29 @@ class Birb {
   }
 }
 
-
-var birb, block;
+var birb;
+var blocks = [];
 
 function setup() {
   createCanvas(500, 400);
 
-  birb = new Birb(100, 200);
-  block = new Block(75);
+  birb = new Birb(100, 200);  
 
 }
 
 
 function draw() {
   background(225);
+
+  // elke 50 frames iets doen
+  if(frameCount % 50 == 0){
+    blocks.push(new Block());
+  }
+
+  blocks.forEach(b => {
+    b.draw();
+  });
   
-  block.draw();
   
   birb.drawBirb();
 
@@ -54,4 +61,3 @@ function keyPressed() {
     birb.vy -= 5;
   }
 }
-
