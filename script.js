@@ -29,24 +29,22 @@ class Birb {
 }
 
 
-var birb;
+var birb, block;
 
 function setup() {
   createCanvas(500, 400);
 
   birb = new Birb(100, 200);
+  block = new Block(75);
 
 }
 
 
 function draw() {
   background(225);
-  fill(0);
-  rect(75, 40, 60, 10);
-
-
-
-
+  
+  block.draw();
+  
   birb.drawBirb();
 
 }
