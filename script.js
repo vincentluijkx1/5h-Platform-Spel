@@ -6,6 +6,8 @@ class Birb {
     this.gravity = 0.2;
   }
 
+  // hoi
+
   drawBirb() {
     fill("red");
     circle(this.x, this.y, 10)
