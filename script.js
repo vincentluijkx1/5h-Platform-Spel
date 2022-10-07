@@ -8,6 +8,7 @@ class Birb {
 
   // hoi
 
+  
   drawBirb() {
     fill("red");
     circle(this.x, this.y, 10)
@@ -36,29 +37,36 @@ class Birb {
   }
 }
 
-
 var birb;
+var blocks = [];
 
 function setup() {
   createCanvas(500, 400);
 
-  birb = new Birb(100, 200);
+  birb = new Birb(100, 200);  
 
 }
 
 
 function draw() {
   background(225);
-  fill(0);
-  rect(75, 40, 60, 10);
+
+  // elke 50 frames iets doen
+  if(frameCount % 50 == 0){
+    blocks.push(new Block());
+  }
+
+  blocks.forEach(b => {
+    b.draw();
+  });
+  
+  
   birb.drawBirb();
 
 }
 
 function keyPressed() {
   if (keyCode == 32) {
-      birb.vy -= 5;
-    }
+    birb.vy -= 5;
   }
-
-
+}
