@@ -12,6 +12,7 @@ class Block {
     rect(this.x, this.y, this.w, this.h);
     this.y += this.vy;
   }
+  
 
   hit(myBirb) {
     if (myBirb.vy > 0) {

@@ -19,6 +19,7 @@ class Birb {
     if (this.y > 380) {
       this.vy = 0;
       this.y = 380;
+      gameState = 2;
       //console.log("DOOD")
     }
 
