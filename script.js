@@ -35,9 +35,10 @@ function gameOver() {
   // maak het lijstje met blocks lees
   blocks = [];
 
-  background("white");
-  fill("red")
-  text("you have died press enter to play again", width / 2, height / 2);
+  background("red");
+  fill("white")
+   textSize(25);
+  text("GAMEOVER, press enter to play again!", 25,height/2);
 }
 
 function playGame() {
