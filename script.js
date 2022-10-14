@@ -4,7 +4,6 @@ var gameState = 0;
 
 function setup() {
   createCanvas(500, 400);
-
   birb = new Birb(100, 200);
 }
 
@@ -12,29 +11,37 @@ function setup() {
 function draw() {
 
   // start menu
-  if(gameState == 0){
+  if (gameState == 0) {
     background("white");
     fill("#007dad")
     text("press enter", width / 2, height / 2)
   }
 
   // play game
-  if(gameState == 1){
+  if (gameState == 1) {
     playGame()
   }
 
   // game over
-  if(gameState == 2){
-    background("white");
-    fill("red")
-    text("you has dies", width / 2, height / 2);    
+  if (gameState == 2) {
+    gameOver()
   }
-  
- 
 }
 
-function playGame(){
-   background(225);
+function gameOver() {
+  // zet de birb weer in het midden    
+  birb = new Birb(100, 200);
+
+  // maak het lijstje met blocks lees
+  blocks = [];
+
+  background("white");
+  fill("red")
+  text("you have died press enter to play again", width / 2, height / 2);
+}
+
+function playGame() {
+  background(225);
 
   // elke 50 frames iets doen
   if (frameCount % 50 == 0) {
@@ -55,7 +62,7 @@ function keyPressed() {
     birb.vy -= 5;
   }
 
-  if(keyCode == 13){
+  if (keyCode == 13) {
     gameState = 1;
   }
 }
